@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=default-width; user-scalable=no"/>
+    <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" href="jquery.mobile-1.0b3.css"/>
+    <script type="text/javascript" src="jquery-1.5.2.js"></script>
+    <script type="text/javascript" src="jquery.mobile-1.0b3.js"></script>
+    <script type="text/javascript" src="phonegap-1.0.0.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=ja"></script>
+    <script type="text/javascript" src="map.js"></script>
+  </head>
+  <body>
+    <!-- HOME -->
+    <div id="home" data-role="page">
+      <div data-role="content">
+        <h3>Directions</h3>
+        <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
+          <li data-role="list-divider">Origin</li>
+          <li><input type="text" id="origin" style="width: 95%" value="東京"></li>
+          <li data-role="list-divider">Destination</li>
+          <li><input type="text" id="destination" style="width: 95%" value="横浜"></li>
+        </ul>
+      </div>
+      <div id="map_canvas2" style="width:320px; height:100px;"></div>
+      <a href="#map" id="search" data-role="button" data-theme="b" style="width:80%; margin: 0 30px 30px 30px">Search</a>
+    </div>
+
+    <!-- Map -->
+    <div id="map" data-role="page" style="width:100%; height:100%">
+      <div data-role="header" data-position="fixed">
+
+        <h1>Map</h1>
+      </div>
+      <div data-role="content" style="padding:0">
+        <div id="map_canvas" style="width:1320px; height:266px;"></div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar">
+          <ul>
+            <li><a id="reflesh" data-icon="refresh">CuLoc</a></li>
+            <li><a id="zoomin" data-icon="arrow-u">Zoomin</a></li>
+            <li><a id="zoomout" data-icon="arrow-d">Zoomout</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
+
