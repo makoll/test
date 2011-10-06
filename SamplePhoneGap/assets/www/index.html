@@ -13,38 +13,47 @@
   <body>
     <!-- HOME -->
     <div id="home" data-role="page">
-      <div data-role="content">
-        <h3>Directions</h3>
-        <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
-          <li data-role="list-divider">Origin</li>
-          <li><input type="text" id="origin" style="width: 95%" value="東京"></li>
-          <li data-role="list-divider">Destination</li>
-          <li><input type="text" id="destination" style="width: 95%" value="横浜"></li>
-        </ul>
-      </div>
-      <div id="map_canvas2" style="width:320px; height:100px;"></div>
-      <a href="#map" id="search" data-role="button" data-theme="b" style="width:80%; margin: 0 30px 30px 30px">Search</a>
-    </div>
 
-    <!-- Map -->
-    <div id="map" data-role="page" style="width:100%; height:100%">
-      <div data-role="header" data-position="fixed">
-
-        <h1>Map</h1>
-      </div>
-      <div data-role="content" style="padding:0">
-        <div id="map_canvas" style="width:1320px; height:266px;"></div>
-      </div>
-      <div data-role="footer">
+      <div data-role="header">
+        <h1>Tera's new</h1>
         <div data-role="navbar">
           <ul>
-            <li><a id="reflesh" data-icon="refresh">CuLoc</a></li>
-            <li><a id="zoomin" data-icon="arrow-u">Zoomin</a></li>
-            <li><a id="zoomout" data-icon="arrow-d">Zoomout</a></li>
+            <li><a id="search" data-icon="search">Search</a></li>
+            <li><a id="regist" data-icon="arrow-u">Regist</a></li>
+            <li><a href="#setting" id="setting" data-icon="arrow-d">Setting</a></li>
           </ul>
         </div>
       </div>
 
+      <div id="map_canvas" style="width:100%; height:400px;"></div>
+
+    </div>
+
+    <!-- Map -->
+    <div id="setting" data-role="page" style="width:100%; height:100%">
+
+      <div data-role="header">
+        <h1>Tera's new</h1>
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#home" id="search" data-icon="search">Search</a></li>
+            <li><a href="#home" id="regist" data-icon="arrow-u">Regist</a></li>
+            <li><a id="setting" data-icon="arrow-d">Setting</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div data-role="content">
+        <h3>Setting</h3>
+        <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
+          <li data-role="list-divider">Name</li>
+          <li><input type="text" id="origin" style="width: 95%" value=""></li>
+          <li data-role="list-divider">Pass</li>
+          <li><input type="text" id="destination" style="width: 95%" value=""></li>
+        </ul>
+      </div>
+
+      <a id="regist" data-role="button" data-theme="b" style="width:80%; margin: 0 30px 30px 30px">Regist</a>
     </div>
 
   </body>
