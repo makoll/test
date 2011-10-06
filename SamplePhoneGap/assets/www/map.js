@@ -29,7 +29,6 @@ $(function() {
       'url' : 'http://192.168.0.2/script_controller.php',
       'type' : 'GET',
       'success' : function(returnData, status, xhr) {
-        alert(0)
       },
       'complete' : function() {
       },
