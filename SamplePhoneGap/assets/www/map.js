@@ -5,7 +5,7 @@ $(function() {
   $(document).bind("deviceready", function() {
   });
 
-  $("#search").bind('click', function() {
+  $("#map").bind('click', function() {
 
     var displayMap = $('#map_canvas');
     var expandedMap = new google.maps.Map(displayMap[0], {
@@ -16,7 +16,7 @@ $(function() {
     // 北西端の座標を設定
     var sw = new google.maps.LatLng(35.803361, 139.950213);
     // 東南端の座標を設定
-    var ne = new google.maps.LatLng(35.803361, 139.950213);
+    var ne = new google.maps.LatLng(35.803561, 139.950513);
     // 範囲を自動調整
     expandedMap.fitBounds(new google.maps.LatLngBounds(sw, ne));
 
@@ -33,6 +33,15 @@ $(function() {
     // 各ポイントをマーカー表示する。
     var marker = new google.maps.Marker({
       'position' : new google.maps.LatLng(lat, lng),
+      'map' : expandedMap
+    });
+
+    var lat2 = 35.803561;
+    var lng2 = 139.950513;
+
+    // 各ポイントをマーカー表示する。
+    var marker2 = new google.maps.Marker({
+      'position' : new google.maps.LatLng(lat2, lng2),
       'map' : expandedMap
     });
 
