@@ -5,7 +5,7 @@ $(function() {
   $(document).bind("deviceready", function() {
   });
 
-  $("#map").bind('click', function() {
+  $("#reload_map").bind('click', function() {
 
     var displayMap = $('#map_canvas');
     var expandedMap = new google.maps.Map(displayMap[0], {
@@ -45,6 +45,11 @@ $(function() {
       'map' : expandedMap
     });
 
+    // マーカークリック時のイベントを定義する。
+    google.maps.event.addListener(marker, 'click', function(event) {
+      $.mobile.changePage($('#event'));
+    });
+
 //    // ajax通信を行う。
 //    $.ajax({
 //      'url' : 'http://192.168.0.2/script_controller.php',
@@ -58,6 +63,17 @@ $(function() {
 //      }
 //    });
   });
+
+  $("#content_map").bind('click', function() {
+
+    alert(11);
+  });
+
+  document.addEventListener("menubutton", onMenuKeyDown, false);
+
+  function onMenuKeyDown() {
+    $("#menu").show();
+  }
 });
 
 

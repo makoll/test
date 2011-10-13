@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+ * @version $Id: mypage_card.css 560 2011-09-24 03:53:58Z mako $
+ *
+ * Copyright 2011-2011, Cardsized. All rights reserved.
+ *
+ * @fileoverview 下記ファイルのスタイルを定義しています。
+ * mypage_mycard_mycards.html
+ * mypage_mycard.html
+ * カード部に関する領域定義
+ * (各要素の属性値は、注釈がない限り昇順に記述)
+ *
+ * @author makolllmako@gmail.com (Makoto Hirose)
+ */
+
+
+.ui-input-search {
+  width: 90%;
+}
