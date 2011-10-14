@@ -72,19 +72,19 @@ $(function() {
       'scrollwheel' : false
     });
 
-    // 北西端の座標を設定
-    var sw = new google.maps.LatLng(35.803361, 139.950213);
-    // 東南端の座標を設定
-    var ne = new google.maps.LatLng(35.803561, 139.950513);
-    // 範囲を自動調整
-    expandedMap.fitBounds(new google.maps.LatLngBounds(sw, ne));
-
     google.maps.event.addListener(expandedMap, 'zoom_changed', function() {
       zoomLevel = expandedMap.getZoom();
       if(isNullBlank(zoomLevel) || 15 < zoomLevel) {
         expandedMap.setZoom(15);
       }
     });
+
+    // 北西端の座標を設定
+    var sw = new google.maps.LatLng(35.803361, 139.950213);
+    // 東南端の座標を設定
+    var ne = new google.maps.LatLng(35.803561, 139.950513);
+    // 範囲を自動調整
+    expandedMap.fitBounds(new google.maps.LatLngBounds(sw, ne));
 
     var lat = 35.803361;
     var lng = 139.950213;
