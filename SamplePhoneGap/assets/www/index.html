@@ -54,21 +54,21 @@
 
         <li class="ui-btn-icon-right">
           <a id="move_content_button" href="#event" >
-            <img src="img/image1.jpg" class="">VIPSTARリサイタル
+            <img src="img/image1.jpg" class="">VIPSTARリサイタル(restriction)<p>20m</p><p>5人</p><p>TAG:VIP</p>
           </a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
 
         <li class="ui-btn-icon-right">
           <a href="#event" >
-            <img src="img/image2.jpg" class="">飲み会
+            <img src="img/image2.jpg" class="">飲み会(restriction)<p>120m</p><p>15人</p><p>TAG:飲み会</p>
           </a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
 
         <li class="ui-btn-icon-right">
           <a href="#event" >
-            <img src="img/image3.jpg" class="">猿と犬が喧嘩
+            <img src="img/image3.jpg" class="">猿と犬が喧嘩<p>50m</p><p>11人</p><p>TAG:動物</p>
           </a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
@@ -130,6 +130,10 @@
             <option value="on">On</option>
           </select>
         </li>
+        <li data-role="list-divider">Restriction</li>
+        <li><input type="text" name="name" id="name" value=""  /></li>
+        <li data-role="list-divider">Tag</li>
+        <li><input type="text" name="name" id="name" value=""  /></li>
         <li>
           <button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">Submit</button>
         </li>
@@ -163,9 +167,9 @@
         <li data-role="list-divider">Place</li>
         <div id="content_map" style="width:100%; height:80px;"></div>
         <li data-role="list-divider">Message</li>
-        <li><img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">うはｗｗｗｗｗ</li>
-        <li><img class="ui-li-icon" src="img/face2.png" style="top:-4px; left: 0px;">おｋｗｗｗｗ</li>
-        <li><img class="ui-li-icon" src="img/face3.png" style="top:-4px; left: 0px;">ktrkｗｗｗｗ</li>
+        <li><img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">うはｗｗｗｗｗ<p>18:55</p></li>
+        <li><img class="ui-li-icon" src="img/face2.png" style="top:-4px; left: 0px;">おｋｗｗｗｗ<p>18:55</p></li>
+        <li><img class="ui-li-icon" src="img/face3.png" style="top:-4px; left: 0px;">ktrkｗｗｗｗ<p>18:55</p></li>
         <li class="ui-btn-icon-right">
           <a href="#event" >more</a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
@@ -187,10 +191,30 @@
           <a href="#event" >ustream</a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
+        <li data-role="list-divider">Restriction</li>
+        <li>20代</li>
+        <li data-role="list-divider">Tag</li>
+        <li>VIP</li>
         <li>
           <fieldset class="ui-grid-a">
             <div class="ui-block-a"><button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false">Join</button></div>
             <div class="ui-block-b"><button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">Back</button></div>
+          </fieldset>
+        </li>
+        <li data-role="list-divider">Recognition</li>
+        <li>
+          <img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">
+          <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false">Accept</button></div>
+            <div class="ui-block-b"><button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">Reject</button></div>
+          </fieldset>
+        </li>
+        <li data-role="list-divider">Valuation</li>
+        <li>
+          <fieldset class="ui-grid-b">
+            <div class="ui-block-a"><button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false">+</button></div>
+            <div class="ui-block-b"><button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">even</button></div>
+            <div class="ui-block-c"><button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">-</button></div>
           </fieldset>
         </li>
       </ul>
@@ -258,7 +282,11 @@
         </li>
         <li data-role="list-divider">Profile Image</li>
         <li><img class="ui-li-icon" src="img/face1.png" style="top:9px; left: 3px;"><div data-role="button" data-inline="true" id="reload_map">Select Image</div></li>
-        <li data-role="list-divider">Password Change</li>
+        <li data-role="list-divider">Mail</li>
+        <li>
+          <input type="text" name="name" id="name" value="makolllmako@gmail.com"  />
+        </li>
+          <li data-role="list-divider">Password Change</li>
         <li>
           <legend><Strong>Current Password:</Strong></legend>
           <input type="text" name="name" id="name" value=""  />
