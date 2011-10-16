@@ -36,8 +36,8 @@ $(function() {
       'map' : expandedMap
     });
 
-    var lat2 = 35.803561;
-    var lng2 = 139.950513;
+    var lat2 = 35.804061;
+    var lng2 = 139.951013;
 
     // 各ポイントをマーカー表示する。
     var marker2 = new google.maps.Marker({
@@ -47,8 +47,9 @@ $(function() {
 
     // マーカークリック時のイベントを定義する。
     google.maps.event.addListener(marker, 'click', function(event) {
-      $.mobile.changePage($('#event'));
+      popupWindow(this);
     });
+
 
 //    // ajax通信を行う。
 //    $.ajax({
@@ -96,10 +97,54 @@ $(function() {
     });
   });
 
+  $("#reload_map2").bind('click', function() {
+
+    var displayMap = $('#map_canvas2');
+    var expandedMap = new google.maps.Map(displayMap[0], {
+      'mapTypeId' : google.maps.MapTypeId.ROADMAP,
+      'scrollwheel' : false
+    });
+
+    // 北西端の座標を設定
+    var sw = new google.maps.LatLng(35.803361, 139.950213);
+    // 東南端の座標を設定
+    var ne = new google.maps.LatLng(35.803561, 139.950513);
+    // 範囲を自動調整
+    expandedMap.fitBounds(new google.maps.LatLngBounds(sw, ne));
+
+    google.maps.event.addListener(expandedMap, 'zoom_changed', function() {
+      zoomLevel = expandedMap.getZoom();
+      if(isNullBlank(zoomLevel) || 15 < zoomLevel) {
+        expandedMap.setZoom(15);
+      }
+    });
+  });
+
   document.addEventListener("menubutton", onMenuKeyDown, false);
 
   function onMenuKeyDown() {
     $("#menu").show();
+  }
+
+  /**
+   * ウインドウをポップアップする。
+   *
+   * @param {Object} marker 各ポイントのマーカー
+   */
+  function popupWindow(marker) {
+
+    var contentParent = $('<a />', {
+      'href' : '#event'
+    });
+
+    contentParent.html('飲み会');
+
+    // 各ポイントの名前、コメント、画像をあわせてメッセージとし、マーカークリック時に表示する。
+    var nowExpandingMapsWindow = new google.maps.InfoWindow({
+      'content' : contentParent.get(0)['outerHTML'],
+      'class' : 'popup'
+    });
+    nowExpandingMapsWindow.open(marker.getMap(), marker);
   }
 });
 

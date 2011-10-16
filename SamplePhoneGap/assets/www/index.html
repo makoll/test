@@ -21,15 +21,18 @@
         BEETOPIC
         <span data-role="navbar">
           <ul>
-            <li><a id="move_map_button" data-icon="map">map</a></li>
-            <li><a href="#list" id="move_list_button" data-icon="arrow-u">list</a></li>
-            <li><a href="#register" id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a id="move_map_button" data-icon="home">map</a></li>
+            <li><a href="#list" id="move_list_button" data-icon="check">list</a></li>
+            <li><a href="#register" id="move_register_button" data-icon="star">register</a></li>
+            <li><a href="#album" id="move_register_button" data-icon="grid">album</a></li>
+            <li><a href="#setting" id="move_register_button" data-icon="gear">setting</a></li>
           </ul>
         </span>
       </div>
 
-        <div data-role="button" id="reload_map">Map Reload</div>
-        <div id="map_canvas" style="width:100%; height:420px;"></div>
+      <input type="search" id="search_text" value="">
+      <div data-role="button" id="reload_map">Reload</div>
+      <div id="map_canvas" style="width:100%; height:420px;"></div>
 
     </div>
   <!-- map end -->
@@ -44,11 +47,14 @@
             <li><a href="#map" id="move_map_button" data-icon="map">map</a></li>
             <li><a id="move_list_button" data-icon="arrow-u">list</a></li>
             <li><a href="#register" id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a href="#album" id="move_register_button" data-icon="grid">album</a></li>
+            <li><a href="#setting" id="move_register_button" data-icon="gear">setting</a></li>
           </ul>
         </div>
       </div>
 
       <input type="search" id="search_text" value="">
+      <div data-role="button" id="reload_map">Reload</div>
       <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
         <li data-role="list-divider">Results</li>
 
@@ -73,11 +79,6 @@
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
 
-        <li class="ui-btn-icon-right">
-          <a href="#event" >more</a>
-          <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
-        </li>
-
       </ul>
 
     </div>
@@ -93,6 +94,8 @@
             <li><a href="#map" id="move_map_button" data-icon="map">map</a></li>
             <li><a href="#list" id="move_list_button" data-icon="arrow-u">list</a></li>
             <li><a id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a href="#album" id="move_register_button" data-icon="grid">album</a></li>
+            <li><a href="#setting" id="move_register_button" data-icon="gear">setting</a></li>
           </ul>
         </div>
       </div>
@@ -104,9 +107,9 @@
         <li>
           <fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain">
             <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-            <label for="radio-choice-1">移動</label>
+            <label for="radio-choice-1">moving</label>
             <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
-            <label for="radio-choice-2">固定</label>
+            <label for="radio-choice-2">fixing</label>
           </fieldset>
         </li>
         <li data-role="list-divider">Message</li>
@@ -124,6 +127,13 @@
           </select>
         </li>
         <li data-role="list-divider">Movie</li>
+        <li>
+          <select name="slider" id="slider" data-role="slider">
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select>
+        </li>
+        <li data-role="list-divider">Ustream</li>
         <li>
           <select name="slider" id="slider" data-role="slider">
             <option value="off">Off</option>
@@ -187,8 +197,20 @@
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
         <li data-role="list-divider">Movie</li>
+        <li>
+          <div>
+            <img src="img/movie1.jpg" style="width:80px;">
+            <img src="img/movie2.jpg" style="width:80px;">
+            <img src="img/movie3.jpg" style="width:80px;">
+          </div>
+        </li>
         <li class="ui-btn-icon-right">
-          <a href="#event" >ustream</a>
+          <a href="#event" >more</a>
+          <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+        </li>
+        <li data-role="list-divider">Ustream</li>
+        <li class="ui-btn-icon-right">
+          <a href="#event" >link Ustream</a>
           <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
         </li>
         <li data-role="list-divider">Restriction</li>
@@ -217,59 +239,116 @@
             <div class="ui-block-c"><button type="submit" data-theme="a" class="ui-btn-hidden" aria-disabled="false">-</button></div>
           </fieldset>
         </li>
+        <li>
+          <button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false">Change</button>
+        </li>
       </ul>
 
     </div>
   <!-- event end -->
 
-  <!-- history start -->
-    <div id="history" data-role="page">
+  <!-- album start -->
+    <div id="album" data-role="page">
 
       <div data-role="header">
         BEETOPIC
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#map" id="move_map_button" data-icon="map">map</a></li>
+            <li><a href="#list" id="move_list_button" data-icon="arrow-u">list</a></li>
+            <li><a href="#register" id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a id="move_register_button" data-icon="grid">album</a></li>
+            <li><a href="#setting" id="move_register_button" data-icon="gear">setting</a></li>
+          </ul>
+        </div>
+        <div data-role="navbar">
+          <ul>
+            <li><a id="move_map_button" data-icon="arrow-l">check-in</a></li>
+            <li><a href="#join" id="move_list_button" data-icon="arrow-r">join</a></li>
+          </ul>
+        </div>
       </div>
 
+      <input type="search" id="search_text" value="">
       <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
-        <li data-role="list-divider" role="heading">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+        <li data-role="list-divider" role="heading">check-in<span class="ui-li-count">2</span></li>
         <li class="ui-btn ui-btn-icon-right">
-          <div class="ui-btn-inner">
-            <div class="ui-btn-text">
-              <a href="#event" class="ui-link-inherit">
-                <h3>東大出てるけど質問ある？</h3>
-                <p>東京都渋谷区</p>
-                <p>2011/9/26 18:24</p>
-              </a>
-            </div>
-            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
-          </div>
+          <a href="#event" class="ui-link-inherit">
+            <h3>東大出てるけど質問ある？</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
         </li>
         <li class="ui-btn ui-btn-icon-right">
-          <div class="ui-btn-inner">
-            <div class="ui-btn-text">
-              <a href="#event" class="ui-link-inherit">
-                <h3>東大出てるけど質問ある？2</h3>
-                <p>東京都渋谷区</p>
-                <p>2011/9/26 18:24</p>
-              </a>
-            </div>
-            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
-          </div>
+          <a href="#event" class="ui-link-inherit">
+            <h3>東大出てるけど質問ある？2</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
         </li>
       </ul>
 
     </div>
-  <!-- history start -->
+  <!-- album end -->
+
+  <!-- join start -->
+    <div id="join" data-role="page">
+
+      <div data-role="header">
+        BEETOPIC
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#map" id="move_map_button" data-icon="map">map</a></li>
+            <li><a href="#list" id="move_list_button" data-icon="arrow-u">list</a></li>
+            <li><a href="#register" id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a id="move_register_button" data-icon="grid">album</a></li>
+            <li><a href="#setting" id="move_register_button" data-icon="gear">setting</a></li>
+          </ul>
+        </div>
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#album" id="move_map_button" data-icon="arrow-l">check-in</a></li>
+            <li><a id="move_list_button" data-icon="arrow-r">join</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <input type="search" id="search_text" value="">
+      <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
+        <li data-role="list-divider" role="heading">join<span class="ui-li-count">1</span></li>
+        <li class="ui-btn ui-btn-icon-right">
+          <a href="#event" class="ui-link-inherit">
+            <h3>test</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  <!-- join end -->
 
   <!-- setting start -->
     <div id="setting" data-role="page">
 
       <div data-role="header">
         BEETOPIC
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#map" id="move_map_button" data-icon="map">map</a></li>
+            <li><a href="#list" id="move_list_button" data-icon="arrow-u">list</a></li>
+            <li><a href="#register" id="move_register_button" data-icon="arrow-d">register</a></li>
+            <li><a href="#album" id="move_register_button" data-icon="grid">album</a></li>
+            <li><a id="move_register_button" data-icon="gear">setting</a></li>
+          </ul>
+        </div>
       </div>
 
       <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
-        <li data-role="list-divider">Account Information</li>
-        <li><img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">makoll(facebook ID)</li>
+        <li data-role="list-divider">User Information</li>
+        <li><a href="#user"><img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">makoll(facebook ID)</a></li>
+        <li data-role="list-divider">Profile Image</li>
+        <li><img class="ui-li-icon" src="img/face1.png" style="top:9px; left: 3px;"><div data-role="button" data-inline="true" id="reload_map">Select Image</div></li>
         <li data-role="list-divider">Timezone</li>
         <li>
           <div class="ui-select">
@@ -280,8 +359,10 @@
             </select>
           </div>
         </li>
-        <li data-role="list-divider">Profile Image</li>
-        <li><img class="ui-li-icon" src="img/face1.png" style="top:9px; left: 3px;"><div data-role="button" data-inline="true" id="reload_map">Select Image</div></li>
+        <li data-role="list-divider">Ustream Account</li>
+        <li>
+          <input type="text" name="name" id="name" value="makoll"  />
+        </li>
         <li data-role="list-divider">Mail</li>
         <li>
           <input type="text" name="name" id="name" value="makolllmako@gmail.com"  />
@@ -310,19 +391,63 @@
     </div>
   <!-- setting end -->
 
-  <!-- menu start -->
-    <div id="menu" style="z-index:100; position:absolute; display:none;">
+  <!-- user start -->
+    <div id="user" data-role="page">
 
-      <span data-role="navbar" class="ui-navbar" role="navigation">
-        <ul class="ui-grid-b">
-          <li class="ui-block-a"><a href="#event" id="move_map_button" data-icon="map" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-top"><span class="ui-btn-inner"><span class="ui-btn-text">event</span><span class="ui-icon ui-icon-map ui-icon-shadow"></span></span></a></li>
-          <li class="ui-block-b"><a href="#history" id="move_list_button" data-icon="arrow-u" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-top"><span class="ui-btn-inner"><span class="ui-btn-text">history</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a></li>
-          <li class="ui-block-c"><a href="#setting" id="move_register_button" data-icon="arrow-d" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-top"><span class="ui-btn-inner"><span class="ui-btn-text">setting</span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span></a></li>
-        </ul>
-      </span>
+      <div data-role="header">
+        BEETOPIC
+      </div>
+
+      <ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="d">
+        <li data-role="list-divider">facebook Information</li>
+        <li><img class="ui-li-icon" src="img/face1.png" style="top:-4px; left: 0px;">makoll(facebook ID)</li>
+        <li data-role="list-divider">Profile Image</li>
+        <li><img class="ui-li-icon" src="img/face1.png" style="top:9px; left: 3px;"><div data-role="button" data-inline="true" id="reload_map">Select Image</div></li>
+        <li data-role="list-divider" role="heading">check-in<span class="ui-li-count">2</span></li>
+        <li class="ui-btn ui-btn-icon-right">
+          <a href="#event" class="ui-link-inherit">
+            <h3>東大出てるけど質問ある？</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
+        </li>
+        <li class="ui-btn ui-btn-icon-right">
+          <a href="#event" class="ui-link-inherit">
+            <h3>東大出てるけど質問ある？2</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
+        </li>
+        <li><a href="#album">more</a></li>
+        <li data-role="list-divider" role="heading">join<span class="ui-li-count">1</span></li>
+        <li class="ui-btn ui-btn-icon-right">
+          <a href="#event" class="ui-link-inherit">
+            <h3>test</h3>
+            <p>東京都渋谷区</p>
+            <p>2011/9/26 18:24</p>
+          </a>
+        </li>
+        <li><a href="#album">more</a></li>
+        <li data-role="list-divider">Valuation</li>
+        <li>+26</li>
+      </ul>
 
     </div>
-  <!-- menu end -->
+  <!-- user end -->
+
+  <!-- place start -->
+    <div id="place" data-role="page">
+
+      <div data-role="header">
+        BEETOPIC
+      </div>
+
+      <div data-role="button" id="reload_map2">Reload</div>
+      <div id="map_canvas2" style="width:100%; height:420px;"></div>
+
+    </div>
+  <!-- place end -->
+
 
   </body>
 </html>
