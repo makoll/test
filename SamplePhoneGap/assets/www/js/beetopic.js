@@ -27,8 +27,8 @@ $(function() {
       }
     });
 
-    var lat = 35.803361;
-    var lng = 139.950213;
+    var lat= 35.804061;
+    var lng = 139.951013;
 
     // 各ポイントをマーカー表示する。
     var marker = new google.maps.Marker({
@@ -36,8 +36,8 @@ $(function() {
       'map' : expandedMap
     });
 
-    var lat2 = 35.804061;
-    var lng2 = 139.951013;
+    var lat2 = 35.803361;
+    var lng2 = 139.950213;
 
     // 各ポイントをマーカー表示する。
     var marker2 = new google.maps.Marker({
@@ -73,13 +73,6 @@ $(function() {
       'scrollwheel' : false
     });
 
-    google.maps.event.addListener(expandedMap, 'zoom_changed', function() {
-      zoomLevel = expandedMap.getZoom();
-      if(isNullBlank(zoomLevel) || 15 < zoomLevel) {
-        expandedMap.setZoom(15);
-      }
-    });
-
     // 北西端の座標を設定
     var sw = new google.maps.LatLng(35.803361, 139.950213);
     // 東南端の座標を設定
@@ -87,8 +80,15 @@ $(function() {
     // 範囲を自動調整
     expandedMap.fitBounds(new google.maps.LatLngBounds(sw, ne));
 
-    var lat = 35.803361;
-    var lng = 139.950213;
+    google.maps.event.addListener(expandedMap, 'zoom_changed', function() {
+      zoomLevel = expandedMap.getZoom();
+      if(isNullBlank(zoomLevel) || 15 < zoomLevel) {
+        expandedMap.setZoom(15);
+      }
+    });
+
+    var lat= 35.804061;
+    var lng = 139.951013;
 
     // 各ポイントをマーカー表示する。
     var marker = new google.maps.Marker({
@@ -137,7 +137,7 @@ $(function() {
       'href' : '#event'
     });
 
-    contentParent.html('飲み会');
+    contentParent.html('突発20代飲み会');
 
     // 各ポイントの名前、コメント、画像をあわせてメッセージとし、マーカークリック時に表示する。
     var nowExpandingMapsWindow = new google.maps.InfoWindow({
