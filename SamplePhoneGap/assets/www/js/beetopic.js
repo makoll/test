@@ -37,7 +37,7 @@ $(function() {
     });
 
     var lat2 = 35.803361;
-    var lng2 = 139.950213;
+    var lng2 = 139.953213;
 
     // 各ポイントをマーカー表示する。
     var marker2 = new google.maps.Marker({
@@ -45,9 +45,24 @@ $(function() {
       'map' : expandedMap
     });
 
+    var lat3 = 35.803361;
+    var lng3 = 139.956213;
+
+    // 各ポイントをマーカー表示する。
+    var marker3 = new google.maps.Marker({
+      'position' : new google.maps.LatLng(lat3, lng3),
+      'map' : expandedMap
+    });
+
     // マーカークリック時のイベントを定義する。
     google.maps.event.addListener(marker, 'click', function(event) {
-      popupWindow(this);
+      popupWindow(this, '路上ライブやってる');
+    });
+    google.maps.event.addListener(marker2, 'click', function(event) {
+      popupWindow(this, '博士号もってるけど，何か質問ある？');
+    });
+    google.maps.event.addListener(marker3, 'click', function(event) {
+      popupWindow(this, '猫が10匹以上集まってる！');
     });
 
 
@@ -87,8 +102,8 @@ $(function() {
       }
     });
 
-    var lat= 35.804061;
-    var lng = 139.951013;
+    var lat = 35.803361;
+    var lng = 139.953213;
 
     // 各ポイントをマーカー表示する。
     var marker = new google.maps.Marker({
@@ -131,13 +146,13 @@ $(function() {
    *
    * @param {Object} marker 各ポイントのマーカー
    */
-  function popupWindow(marker) {
+  function popupWindow(marker, strings) {
 
     var contentParent = $('<a />', {
       'href' : '#event'
     });
 
-    contentParent.html('突発20代飲み会');
+    contentParent.html(strings);
 
     // 各ポイントの名前、コメント、画像をあわせてメッセージとし、マーカークリック時に表示する。
     var nowExpandingMapsWindow = new google.maps.InfoWindow({
